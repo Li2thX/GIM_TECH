@@ -24,21 +24,41 @@
         <h1>Калькулятори</h1>
         <section>
             <h2>Конвертація величин</h2>
-            <form id="converter">
-                <label for="value">Введіть значення:</label>
-                <input type="number" id="value" required>
-                <button type="button" onclick="convert()">Конвертувати</button>
+            <form id="converter1">
+                <label for="value1">Введіть значення:</label>
+                <input type="number1" id="value1" required>
+                <button type="button1" onclick="convert1()">Конвертувати</button>
             </form>
-            <p id="result"></p>
+            <p id="result1"></p>
         </section>
+        <h1>Калькулятор конвертації довжини</h1>
+
+        <p>Цей калькулятор дозволяє конвертувати довжину між метрами (m) та кілометрами (km).</p>
+
+        <form id="converter2">
+            <label for="value2">Введіть значення у метрах:</label>
+            <input type="number2" id="value2" placeholder="Введіть довжину" required>
+            <button type="button2" onclick="convert2()">Перерахувати</button>
+        </form>
+
+        <p id="result2"></p>
     </main>
     <footer>
         <p>&copy; 2024 Освітній ресурс</p>
     </footer>
     <script>
-        function convert() {
-            const value = document.getElementById("value").value;
+        function convert1() {
+            const value1 = document.getElementById("value1").value;
             document.getElementById("result").textContent = `${value} USD = ${(value * 36.5).toFixed(2)} UAH`;
+        }
+    </script>
+    <script>
+        function convert2() {
+            const value2 = document.getElementById("value2").value;
+            const km = value / 1000;
+            const meters = km * 1000;
+            document.getElementById("result").innerText =
+                `${value} м = ${km.toFixed(2)} км | ${km} км = ${meters} м`;
         }
     </script>
 </body>
