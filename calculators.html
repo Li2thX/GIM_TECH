@@ -59,7 +59,7 @@
     function convert1() {
         const value1 = parseFloat(document.getElementById("value1").value);
         if (!isNaN(value1)) {
-            const rate = 41,71; // Поточний курс USD в UAH
+            const rate = 41.71; // Поточний курс USD в UAH
             document.getElementById("result1").textContent = `${value1} USD = ${(value1 * rate).toFixed(2)} UAH`;
         } else {
             alert("Будь ласка, введіть число.");
