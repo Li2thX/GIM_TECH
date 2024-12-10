@@ -1,5 +1,3 @@
-
-<!DOCTYPE html>
 <html lang="uk">
 <head>
     <meta charset="UTF-8">
@@ -9,57 +7,78 @@
     <link rel="icon" href="img/favicon.ico">
 </head>
 <body>
-    <header>
-        <nav>
-            <ul>
-                <li><a href="index.html">Головна</a></li>
-                <li><a href="tech.html">Технології</a></li>
-                <li><a href="calculators.html">Калькулятори</a></li>
-                <li><a href="gallery.html">Галерея</a></li>
-                <li><a href="contacts.html">Контакти</a></li>
-            </ul>
+
+<header>
+    <nav>
+        <ul>
+            <li><a href="index.html">Головна</a></li>
+            <li><a href="tech.html">Технології</a></li>
+            <li><a href="calculators.html">Калькулятори</a></li>
+            <li><a href="gallery.html">Галерея</a></li>
+            <li><a href="contacts.html">Контакти</a></li>
         </nav>
     </header>
-    <main>
-        <h1>Калькулятори</h1>
-        <section>
-            <h2>Конвертація USD в UAH</h2>
-            <form id="converter1">
-                <label for="value1">Введіть значення:</label>
-                <input type="number1" id="value1" required>
-                <button type="button1" onclick="convert1()">Конвертувати</button>
-            </form>
-            <p id="result1"></p>
-        </section>
-        <h1>Калькулятор конвертації довжини</h1>
 
-        <p>Цей калькулятор дозволяє конвертувати довжину між метрами (m) та кілометрами (km).</p>
+<main>
+
+    <h1>Калькулятори</h1>
+
+    <!-- Конвертація USD в UAH -->
+    <section>
+        <h2>Конвертація USD в UAH</h2>
+        <form id="converter1">
+            <label for="value1">Введіть значення USD:</label>
+            <input type="number" id="value1" placeholder="Введіть суму" required>
+            <button type="button" onclick="convert1()">Конвертувати</button>
+        </form>
+        <p id="result1"></p>
+    </section>
+
+    <!-- Конвертація довжини -->
+    <section>
+        <h2>Конвертація довжини</h2>
+        <p>Цей калькулятор дозволяє конвертувати довжину між метрами та кілометрами.</p>
 
         <form id="converter2">
             <label for="value2">Введіть значення у метрах:</label>
-            <input type="number2" id="value2" placeholder="Введіть довжину" required>
-            <button type="button2" onclick="convert2()">Перерахувати</button>
+            <input type="number" id="value2" placeholder="Введіть довжину" required>
+            <button type="button" onclick="convert2()">Перерахувати</button>
         </form>
 
         <p id="result2"></p>
-    </main>
-    <footer>
-        <p>&copy; 2024 Освітній ресурс</p>
-    </footer>
-    <script>
-        function convert1() {
-            const value1 = document.getElementById("value1").value;
-            document.getElementById("result").textContent = `${value} USD = ${(value * 36.5).toFixed(2)} UAH`;
+    </section>
+
+</main>
+
+<footer>
+    <p>&copy; 2024 Освітній ресурс</p>
+</footer>
+
+<script>
+    // Конвертація USD в UAH
+    function convert1() {
+        const value1 = parseFloat(document.getElementById("value1").value);
+        if (!isNaN(value1)) {
+            const rate = 36.5; // Поточний курс USD в UAH
+            document.getElementById("result1").textContent = `${value1} USD = ${(value1 * rate).toFixed(2)} UAH`;
+        } else {
+            alert("Будь ласка, введіть число.");
         }
-    </script>
-    <script>
-        function convert2() {
-            const value2 = document.getElementById("value2").value;
-            const km = value / 1000;
-            const meters = km * 1000;
-            document.getElementById("result").innerText =
-                `${value} м = ${km.toFixed(2)} км | ${km} км = ${meters} м`;
+    }
+
+    // Конвертація довжини між метрами та кілометрами
+    function convert2() {
+        const value2 = parseFloat(document.getElementById("value2").value);
+        if (!isNaN(value2)) {
+            const meters = value2;
+            const kilometers = value2 / 1000;
+            document.getElementById("result2").innerText =
+                `${meters} м = ${kilometers.toFixed(2)} км | ${kilometers.toFixed(2)} км = ${meters * 1000} м`;
+        } else {
+            alert("Будь ласка, введіть число.");
         }
-    </script>
+    }
+</script>
+
 </body>
 </html>
