@@ -1,3 +1,16 @@
+let currentSlide = 0;
+const slides = document.getElementsByClassName("slider-img");
+
+function carousel() {
+    for (let i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+    }
+    currentSlide++;
+    if (currentSlide >= slides.length) currentSlide = 0;
+
+    slides[currentSlide].style.display = "block";
+    setTimeout(carousel, 3000);
+}
 
 document.addEventListener('DOMContentLoaded', function() {
     const slides = document.querySelectorAll('.slider .slide');
