@@ -70,10 +70,11 @@
     function convert2() {
         const value2 = parseFloat(document.getElementById("value2").value);
         if (!isNaN(value2)) {
-            const meters = value2;
             const kilometers = value2 / 1000;
+            const meters = value2 * 1;
+
             document.getElementById("result2").innerText =
-                `${meters} м = ${kilometers.toFixed(2)} км | ${kilometers.toFixed(2)} км = ${meters * 1000} м`;
+                `${meters} м = ${kilometers.toFixed(3)} км`;
         } else {
             alert("Будь ласка, введіть число.");
         }
