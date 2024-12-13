@@ -1,5 +1,7 @@
 <html lang="uk">
 <head>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Галерея</title>
@@ -22,12 +24,26 @@
     <main>
         <h1>Галерея Технологій</h1>
 
-        <section class="gallery">
-            <div><img src="img/ai.jpg" alt="Штучний інтелект"></div>
-            <div><img src="img/iot_home.jpg" alt="IoT у розумному будинку"></div>
-            <div><img src="img/5g_network.jpg" alt="5G мережа"></div>
-            <div><img src="img/blockchain.png" alt="Blockchain технологія"></div>
-            <div><img src="img/ar_vr.jpg" alt="Розширена та віртуальна реальність"></div>
+        <section id="gallery">
+            <div class="gallery">
+                 <a href="img/ai.jpg" data-lightbox="gallery" data-title="Штучний інтелект">
+            <img src="img/ai.jpg" alt="Штучний інтелект"> </a>
+                <a href="img/iot_home.jpg" data-lightbox="gallery" data-title="IoT у розумному будинку2">
+            <img src="img/iot_home.jpg" alt="IoT у розумному будинку">
+        </a>
+
+             <a href="img/5g_network.jpg" data-lightbox="gallery" data-title="5G мережа">
+            <img src="img/5g_network.jpg" alt="5G мережа">
+        </a>
+
+             <a href="img/blockchain.png" data-lightbox="gallery" data-title="Blockchain технологія">
+            <img src="img/blockchain.png" alt="Blockchain технологія">
+        </a>
+
+             <a href="img/ar_vr.jpg" data-lightbox="gallery" data-title="Розширена та віртуальна реальність">
+            <img src="img/ar_vr.jpg" alt="Розширена та віртуальна реальність">
+        </a>
+         </div>
         </section>
     </main>
 
