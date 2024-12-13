@@ -91,3 +91,80 @@ footer {
     color: white;
     font-size: 0.9rem;
 }
+
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.gallery a {
+    padding: 5px;
+}
+
+.gallery img {
+    width: 300px;
+    height: auto;
+    transition: transform 0.2s;
+}
+
+.gallery img:hover {
+    transform: scale(1.05);
+}
+
+#social {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+}
+
+#social a {
+    text-decoration: none;
+    font-size: 36px;
+    color: #555;
+    margin: 0 15px;
+    transition: color 0.3s;
+}
+
+#social a:hover {
+    color: #ff5722;
+}
+
+#social i {
+    vertical-align: middle;
+}
+
+/* Тематичні картки */
+.topics-container {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.topic-card {
+    display: block;
+    text-align: center;
+    border: 2px solid #ddd;
+    border-radius: 10px;
+    padding: 15px;
+    text-decoration: none;
+    background-color: #f9f9f9;
+    transition: transform 0.3s, box-shadow 0.3s;
+    width: 250px;
+}
+
+.topic-card h3 {
+    margin: 10px 0;
+    font-size: 1.5rem;
+}
+
+.topic-card p {
+    font-size: 1rem;
+    color: #555;
+}
+
+.topic-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
